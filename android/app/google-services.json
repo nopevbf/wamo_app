@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "90740274728",
+    "project_id": "wamo-app",
+    "storage_bucket": "wamo-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90740274728:android:574243448c2e510bf8a71d",
+        "android_client_info": {
+          "package_name": "com.example.wamo_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "90740274728-suj9a6qqhav6bhng2huv2ki62j93rubh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB57WBiCwG4IVvKMgWcwzwfi2Al-nWzPNk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "90740274728-suj9a6qqhav6bhng2huv2ki62j93rubh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
