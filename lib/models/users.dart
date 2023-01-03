@@ -9,7 +9,7 @@ class Users extends Equatable {
   final String selectedLanguage;
   final int balance;
 
-  Users(this.id, this.email,
+  const Users(this.id, this.email,
       {this.name = "No Name",
       this.profilePicture = "",
       this.selectedGenres = const [],

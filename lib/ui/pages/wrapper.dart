@@ -13,6 +13,7 @@ class Warapper extends StatelessWidget {
       }
     } else {
       if (prevPageEvent is! GoToMainPage) {
+        context.read<UserBloc>().add(LoadUser(user.uid));
         prevPageEvent = GoToMainPage();
         context.read<PageBloc>().add(prevPageEvent!);
       }

@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+import 'package:wamo_app/bloc/user_bloc.dart';
 import 'package:wamo_app/services/services.dart';
 import 'package:wamo_app/ui/pages/pages.dart';
 
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
         initialData: null,
         child: MultiBlocProvider(providers: [
           BlocProvider(create: (_) => PageBloc()),
+          BlocProvider(create: (_) => UserBloc()),
         ], child: MaterialApp(title: 'Flutter Demo', home: Warapper())));
   }
 }

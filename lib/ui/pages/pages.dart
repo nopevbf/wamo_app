@@ -6,6 +6,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:wamo_app/bloc/page_bloc.dart';
+import 'package:wamo_app/bloc/user_bloc.dart';
 import 'package:wamo_app/shared/shared.dart';
 
 import '../../services/services.dart';
