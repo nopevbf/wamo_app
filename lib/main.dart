@@ -1,8 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:wamo_app/services/services.dart';
 import 'package:wamo_app/ui/pages/pages.dart';
+
+import 'bloc/page_bloc.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,6 +21,8 @@ class MyApp extends StatelessWidget {
     return StreamProvider.value(
         value: AuthServices.userStream,
         initialData: null,
-        child: MaterialApp(title: 'Flutter Demo', home: Warapper()));
+        child: MultiBlocProvider(providers: [
+          BlocProvider(create: (_) => PageBloc()),
+        ], child: MaterialApp(title: 'Flutter Demo', home: Warapper())));
   }
 }
