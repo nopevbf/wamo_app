@@ -1,13 +1,13 @@
 part of 'pages.dart';
 
-class SIgnInPage extends StatefulWidget {
-  const SIgnInPage({super.key});
+class SignInPage extends StatefulWidget {
+  const SignInPage({super.key});
 
   @override
-  State<SIgnInPage> createState() => _SIgnInPageState();
+  State<SignInPage> createState() => _SignInPageState();
 }
 
-class _SIgnInPageState extends State<SIgnInPage> {
+class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
