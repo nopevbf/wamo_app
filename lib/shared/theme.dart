@@ -14,7 +14,7 @@ TextStyle greyTextFont = GoogleFonts.raleway()
     .copyWith(color: accentColor1, fontWeight: FontWeight.w500);
 TextStyle blueTextFont = GoogleFonts.raleway()
     .copyWith(color: accentColor2, fontWeight: FontWeight.w500);
-TextStyle redRTextFont = GoogleFonts.raleway()
+TextStyle redTextFont = GoogleFonts.raleway()
     .copyWith(color: mainColor, fontWeight: FontWeight.w500);
 
 TextStyle blackNumberFont = GoogleFonts.openSans()
