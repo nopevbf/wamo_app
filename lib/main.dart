@@ -4,9 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:wamo_app/bloc/user_bloc.dart';
 import 'package:wamo_app/services/services.dart';
+import 'package:wamo_app/shared/shared.dart';
 import 'package:wamo_app/ui/pages/pages.dart';
 
 import 'bloc/page_bloc.dart';
+import 'bloc/theme_bloc.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,9 +24,23 @@ class MyApp extends StatelessWidget {
     return StreamProvider.value(
         value: AuthServices.userStream,
         initialData: null,
-        child: MultiBlocProvider(providers: [
-          BlocProvider(create: (_) => PageBloc()),
-          BlocProvider(create: (_) => UserBloc()),
-        ], child: MaterialApp(title: 'Flutter Demo', home: Warapper())));
+        child: MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (_) => PageBloc()),
+              BlocProvider(create: (_) => UserBloc()),
+              BlocProvider(create: (_) => ThemeBloc())
+            ],
+            child: BlocBuilder<ThemeBloc, ThemeState>(
+                builder: (_, themeState) => MaterialApp(
+                    theme: themeState.themeData,
+                    // theme: ThemeData().copyWith(
+                    //   scaffoldBackgroundColor: Colors.white,
+                    //   colorScheme: ThemeData().colorScheme.copyWith(
+                    //         primary: accentColor3,
+                    //       ),
+                    //   errorColor: mainColor,
+                    // ),
+                    debugShowCheckedModeBanner: false,
+                    home: const Wrapper()))));
   }
 }
