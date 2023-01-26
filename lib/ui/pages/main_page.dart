@@ -39,7 +39,7 @@ class _MainPageState extends State<MainPage> {
             });
           },
           children: const <Widget>[
-            Center(child: Text('New Movie')),
+            MoviePage(),
             Center(child: Text('New Movie')),
           ],
         ),
@@ -53,7 +53,10 @@ class _MainPageState extends State<MainPage> {
             child: FloatingActionButton(
               elevation: 0,
               backgroundColor: mainColor,
-              onPressed: () {},
+              onPressed: () {
+                context.read<UserBloc>().add(const SignOut());
+                AuthServices.signOut();
+              },
               child: SizedBox(
                 height: 26,
                 width: 26,
