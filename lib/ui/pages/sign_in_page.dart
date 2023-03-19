@@ -137,7 +137,7 @@ class _SignInPageState extends State<SignInPage> {
                                                   FlushbarPosition.TOP,
                                               backgroundColor: mainColor,
                                               message: result.message,
-                                            )..show(context);
+                                            ).show(context);
                                           }
                                         }
                                       : null,

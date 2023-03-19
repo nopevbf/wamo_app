@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:wamo_app/bloc/user_bloc.dart';
 import 'package:wamo_app/services/services.dart';
-import 'package:wamo_app/shared/shared.dart';
 import 'package:wamo_app/ui/pages/pages.dart';
 
 import 'bloc/page_bloc.dart';
