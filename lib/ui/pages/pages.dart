@@ -8,6 +8,7 @@ import 'package:intl/intl.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:wamo_app/bloc/bloc.dart';
+import 'package:wamo_app/models/models.dart';
 import 'package:wamo_app/shared/shared.dart';
 
 import '../../services/services.dart';
@@ -17,3 +18,6 @@ part 'sign_in_page.dart';
 part 'wrapper.dart';
 part 'splash_page.dart';
 part 'movie_page.dart';
+part 'sign_up_page.dart';
+part 'preference_page.dart';
+part 'account_confirm_page.dart';
