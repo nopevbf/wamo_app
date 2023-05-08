@@ -30,6 +30,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   another_flushbar: ^1.12.29
+  bloc: ^8.1.1
   cloud_firestore: ^4.4.5
   cupertino_icons: ^1.0.5
   email_validator: ^2.1.17

@@ -130,6 +130,7 @@ class _SignInPageState extends State<SignInPage> {
                                               isSigningIn = false;
                                             });
 
+                                            if (context.mounted) return;
                                             Flushbar(
                                               duration:
                                                   const Duration(seconds: 4),
