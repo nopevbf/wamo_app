@@ -71,19 +71,19 @@ class _SignUpPageState extends State<SignUpPage> {
                                     width: 90,
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
-                                      image: DecorationImage(image: (widget.registData.profileImage == null) ? AssetImage('assets/user_pic.png') as ImageProvider : FileImage(widget.registData.profileImage!), fit: BoxFit.cover),
+                                      image: DecorationImage(image: (widget.registData.profileImage == null) ? const AssetImage('assets/user_pic.png') as ImageProvider : FileImage(widget.registData.profileImage!), fit: BoxFit.cover),
                                     )
                                 ),
                                 Align(
                                   alignment: Alignment.bottomCenter,
                                   child: GestureDetector(
                                     onTap: () async {
-                                      // if (widget.registData.profileImage == null) {
-                                      //   widget.registData.profileImage = await getImage();
-                                      // } else {
-                                      //   widget.registData.profileImage = null;
-                                      // }
-                                      // setState(() {});
+                                      if (widget.registData.profileImage == null) {
+                                        widget.registData.profileImage = await getImage();
+                                      } else {
+                                        widget.registData.profileImage = null;
+                                      }
+                                      setState(() {});
                                     },
                                     child: Container(
                                         height: 28,
@@ -152,46 +152,46 @@ class _SignUpPageState extends State<SignUpPage> {
                           backgroundColor: mainColor,
                           child: const Icon(Icons.arrow_forward),
                           onPressed: () {
-                            if (!(nameController.text.trim() != '' &&
-                                emailController.text.trim() != '' &&
-                                passwordController.text.trim() != '' &&
-                                confirmPasswordController.text.trim() != '')) {
+                            if (!(nameController.text.trim() != "" &&
+                                emailController.text.trim() != "" &&
+                                passwordController.text.trim() != "" &&
+                                confirmPasswordController.text.trim() != "")) {
                               Flushbar(
                                 duration: const Duration(milliseconds: 1500),
                                 flushbarPosition: FlushbarPosition.TOP,
-                                backgroundColor: accentColor2,
+                                backgroundColor: mainColor,
                                 message: 'Please fill all the fields',
-                              )..show(context);
+                              ).show(context);
                             } else if (passwordController.text !=
                                 confirmPasswordController.text) {
                               Flushbar(
                                 duration: const Duration(milliseconds: 1500),
                                 flushbarPosition: FlushbarPosition.TOP,
-                                backgroundColor: accentColor2,
+                                backgroundColor: mainColor,
                                 message: 'Mismatch password and confirmed password',
-                              )..show(context);
+                              ).show(context);
                             } else if (passwordController.text.length < 6) {
                               Flushbar(
                                 duration: const Duration(milliseconds: 1500),
                                 flushbarPosition: FlushbarPosition.TOP,
-                                backgroundColor: accentColor2,
+                                backgroundColor: mainColor,
                                 message: 'Password\'s length min 6 characters',
-                              )..show(context);
+                              ).show(context);
                             } else if (!EmailValidator.validate(
                                 emailController.text)) {
                               Flushbar(
                                 duration: const Duration(milliseconds: 1500),
                                 flushbarPosition: FlushbarPosition.TOP,
-                                backgroundColor: accentColor2,
+                                backgroundColor: mainColor,
                                 message: 'Wrong formatted email address',
-                              )..show(context);
+                              ).show(context);
                             } else {
                               widget.registData.name = nameController.text;
                               widget.registData.email = emailController.text;
                               widget.registData.password = passwordController.text;
 
-                              context.read<PageBloc>().add(
-                                  GoToPreferencePage(widget.registData));
+                              //todo: Go to preference page
+                              context.read<PageBloc>().add(GoToPreferencePage(widget.registData));
                             }
                           },
                         )
