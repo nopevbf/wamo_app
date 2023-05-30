@@ -14,7 +14,7 @@ class Users extends Equatable {
       this.profilePicture = "",
       this.selectedGenres = const [],
       this.selectedLanguage = "English",
-      this.balance = 50000});
+      this.balance = 100000});
 
   Users copyWith({String? profilePicture}) =>
       Users(
