@@ -5,3 +5,4 @@ String imagesBaseUrl = "https://image.tmdb.org/t/p/";
 
 //prevent firebase to have multiple instance
 PageEvent? prevPageEvent;
+File? imageFileToUpload;

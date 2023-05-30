@@ -32,14 +32,12 @@ class MyApp extends StatelessWidget {
             ],
             child: BlocBuilder<ThemeBloc, ThemeState>(
                 builder: (_, themeState) => MaterialApp(
-                    theme: themeState.themeData,
-                    // theme: ThemeData().copyWith(
-                    //   scaffoldBackgroundColor: Colors.white,
-                    //   colorScheme: ThemeData().colorScheme.copyWith(
-                    //         primary: accentColor3,
-                    //       ),
-                    //   errorColor: mainColor,
-                    // ),
+                    // theme: themeState.themeData,
+                    theme: ThemeData().copyWith(
+                      scaffoldBackgroundColor: Colors.white, colorScheme: ThemeData().colorScheme.copyWith(
+                            primary: accentColor1,
+                          ).copyWith(error: mainColor),
+                    ),
                     debugShowCheckedModeBanner: false,
                     home: const Wrapper()))));
   }
