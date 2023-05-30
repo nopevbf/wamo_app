@@ -18,7 +18,13 @@ class MoviePage extends StatelessWidget {
               const EdgeInsets.fromLTRB(defaultMargin, 20, defaultMargin, 30),
           child: BlocBuilder<UserBloc, UserState>(
             builder: (_, userState) {
-              if (userState is UserLoaded) {
+                if(userState is UserLoaded){
+                  if(imageFileToUpload != null){
+                    uploadImage(imageFileToUpload!).then((downloadURL) {
+                      imageFileToUpload = null;
+                      context.read<UserBloc>().add(UpdateData(profileImage: downloadURL));
+                    });
+                  }
                 return Row(
                   children: [
                     Container(
@@ -59,8 +65,8 @@ class MoviePage extends StatelessWidget {
                           width: MediaQuery.of(context).size.width -
                               2 * defaultMargin -
                               78,
-                          child: Text("${userState.users.name} Aji Prasetyo",
-                              style: whiteTextFont.copyWith(fontSize: 18),
+                          child: Text(userState.users.name,
+                              style: whiteTextFont.copyWith(fontSize: 18, color: Colors.black),
                               maxLines: 1,
                               overflow: TextOverflow.clip),
                         ),
@@ -71,7 +77,7 @@ class MoviePage extends StatelessWidget {
                                     decimalDigits: 0)
                                 .format(userState.users.balance),
                             style: blackNumberFont.copyWith(
-                                fontSize: 14, fontWeight: FontWeight.w400))
+                                fontSize: 14, fontWeight: FontWeight.w700, color: Colors.white))
                       ],
                     ),
                   ],
