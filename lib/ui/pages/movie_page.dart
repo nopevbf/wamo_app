@@ -35,7 +35,7 @@ class MoviePage extends StatelessWidget {
                       child: Stack(
                         children: [
                           SpinKitFadingCircle(
-                            color: accentColor1,
+                            color: accentColor3,
                             size: 50,
                           ),
                           Container(
