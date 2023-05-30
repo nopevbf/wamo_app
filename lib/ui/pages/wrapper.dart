@@ -5,7 +5,7 @@ class Wrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    User user = Provider.of<User>(context);
+    User? user = Provider.of<User?>(context);
     if (user == null) {
       if (prevPageEvent is! GoToSplashPage) {
         prevPageEvent = GoToSplashPage();
@@ -23,7 +23,13 @@ class Wrapper extends StatelessWidget {
           ? const SplashPage()
           : (pageState is OnLoginPage)
               ? const SignInPage()
-              : const MainPage(),
+              : (pageState is OnRegistPage)
+                  ? SignUpPage(pageState.registData):
+                  (pageState is OnPreferencePage)
+                      ? PreferencePage(pageState.registData):
+                      (pageState is OnAccountConfirmationPage)
+                          ? AccountConfirmationPage(pageState.registData)
+                  : const MainPage(),
     );
   }
 }

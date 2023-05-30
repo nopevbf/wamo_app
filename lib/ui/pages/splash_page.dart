@@ -42,7 +42,9 @@ class SplashPage extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8))),
                     onPressed: () {
-                      // context.read<PageBloc>().add(GoToRegistrationPage());
+                      context
+                          .read<PageBloc>()
+                          .add(GoToRegistPage(RegistData()));
                     },
                     child: Text(
                       'Get Started',

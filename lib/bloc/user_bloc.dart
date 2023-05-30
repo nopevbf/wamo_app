@@ -16,6 +16,12 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       } else if (event is SignOut) {
         FirebaseAuth.instance.signOut();
         emit(UserInitial());
+      } else if (event is UpdateData) {
+        Users usersUpdated = (state as UserLoaded)
+            .users
+            .copyWith(profilePicture: event.profileImage);
+        await UserServices.updateUser(usersUpdated);
+        emit(UserLoaded(usersUpdated));
       }
     });
   }
