@@ -61,7 +61,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             ],
                           ),
                         ),
-                        Container(
+                        SizedBox(
                           width: 90,
                           height: 104,
                           child: Stack(

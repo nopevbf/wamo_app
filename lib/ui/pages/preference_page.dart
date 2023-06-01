@@ -16,7 +16,7 @@ class PreferencePage extends StatefulWidget {
     "Arabic",
     "German",];
   late final RegistData registData;
-  PreferencePage(this.registData);
+  PreferencePage(this.registData, {super.key});
   @override
   _PreferencePageState createState() => _PreferencePageState();
 }

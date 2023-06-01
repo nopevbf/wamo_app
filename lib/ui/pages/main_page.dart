@@ -38,9 +38,18 @@ class _MainPageState extends State<MainPage> {
               bottomNavBarIndex = index;
             });
           },
-          children: const <Widget>[
+          children: <Widget>[
             MoviePage(),
             Center(child: Text('New Movie')),
+            Align(
+              alignment: Alignment.topCenter,
+              child: GestureDetector(
+                onTap: () {
+                  context.read<UserBloc>().add(const SignOut());
+                  AuthServices.signOut();
+                },
+              ),
+            )
           ],
         ),
         customButtomNavBar(),
@@ -144,3 +153,4 @@ class BottomNavBarClipper extends CustomClipper<Path> {
     return false;
   }
 }
+

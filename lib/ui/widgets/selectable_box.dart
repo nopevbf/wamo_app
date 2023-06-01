@@ -8,8 +8,8 @@ class SelectableBox extends StatelessWidget {
   final String text;
   final Function ?onTap;
 
-  SelectableBox(this.text,
-      {this.isSelected = false,
+  const SelectableBox(this.text,
+      {super.key, this.isSelected = false,
       this.isEnabled = true,
       this.width = 144,
       this.height = 60,
@@ -41,7 +41,7 @@ class SelectableBox extends StatelessWidget {
                         : const Color(0xFFE4E4E4))),
         child: Center(
           child: Text(
-            text ?? "None",
+            text,
             style: (isSelected)
                 ? whiteTextFont.copyWith(fontSize: 16)
                 : greyTextFont.copyWith(fontSize: 16),
