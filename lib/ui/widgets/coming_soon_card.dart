@@ -1,10 +1,10 @@
 part of 'widgets.dart';
 
-class MovieCard extends StatelessWidget {
+class ComingSoonCard extends StatelessWidget {
   final Movies movies;
   final Function onTap;
 
-  const MovieCard(this.movies, this.onTap, {super.key});
+  const ComingSoonCard(this.movies, this.onTap, {super.key});
 
   @override
   Widget build(BuildContext context) {

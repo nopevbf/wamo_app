@@ -5,3 +5,5 @@ import 'package:wamo_app/shared/shared.dart';
 part 'selectable_box.dart';
 part 'movie_card.dart';
 part 'rating_starts.dart';
+part 'coming_soon_card.dart';
+part 'browse_button.dart';

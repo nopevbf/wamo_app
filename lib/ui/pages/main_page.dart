@@ -39,8 +39,8 @@ class _MainPageState extends State<MainPage> {
             });
           },
           children: <Widget>[
-            MoviePage(),
-            Center(child: Text('New Movie')),
+            const MoviePage(),
+            const Center(child: Text('New Movie')),
             Align(
               alignment: Alignment.topCenter,
               child: GestureDetector(
@@ -153,4 +153,3 @@ class BottomNavBarClipper extends CustomClipper<Path> {
     return false;
   }
 }
-

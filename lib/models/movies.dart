@@ -8,7 +8,7 @@ class Movies extends Equatable {
   final String backdropPath;
   final double voteAverage;
 
-  Movies(
+  const Movies(
       {required this.id,
       required this.title,
       required this.overview,

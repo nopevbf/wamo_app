@@ -98,6 +98,7 @@ class MoviePage extends StatelessWidget {
             },
           ),
         ),
+
         // note: NOW PLAYING
         Container(
           margin:
@@ -129,6 +130,81 @@ class MoviePage extends StatelessWidget {
                       //     .add(GoToMovieDetailPage(movies[index]));
                     }),
                   ),
+                );
+              } else {
+                return SpinKitFadingCircle(
+                  color: mainColor,
+                  size: 50,
+                );
+              }
+            },
+          ),
+        ),
+
+        // note: BROWSE MOVIE
+        Container(
+          margin:
+              const EdgeInsets.fromLTRB(defaultMargin, 30, defaultMargin, 12),
+          child: Text(
+            'Browse Movie',
+            style: blackTextFont.copyWith(
+                fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+        ),
+        BlocBuilder<UserBloc, UserState>(
+          builder: (_, userState) {
+            if (userState is UserLoaded) {
+              return Container(
+                margin: const EdgeInsets.symmetric(horizontal: defaultMargin),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: List.generate(
+                    userState.users.selectedGenres.length,
+                    (index) => BrowseButton(
+                        genre: userState.users.selectedGenres[index]),
+                  ),
+                ),
+              );
+            } else {
+              return SpinKitFadingCircle(
+                color: mainColor,
+                size: 50,
+              );
+            }
+          },
+        ),
+
+        // note: COMING SOON
+        Container(
+          margin:
+              const EdgeInsets.fromLTRB(defaultMargin, 30, defaultMargin, 12),
+          child: Text(
+            'Coming Soon',
+            style: blackTextFont.copyWith(
+                fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+        ),
+        SizedBox(
+          height: 140,
+          child: BlocBuilder<MovieBloc, MovieState>(
+            builder: (_, movieState) {
+              if (movieState is MovieLoaded) {
+                List<Movies> movies = movieState.movies.sublist(10);
+
+                return ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: movies.length,
+                  itemBuilder: (_, index) => Container(
+                      margin: EdgeInsets.only(
+                          left: (index == 0) ? defaultMargin : 0,
+                          right: (index == movies.length - 1)
+                              ? defaultMargin
+                              : 16),
+                      child: ComingSoonCard(movies[index], () {
+                        // context
+                        //     .read<PageBloc>()
+                        //     .add(GoToMovieDetailPage(movies[index]));
+                      })),
                 );
               } else {
                 return SpinKitFadingCircle(
