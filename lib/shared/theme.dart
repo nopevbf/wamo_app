@@ -17,8 +17,12 @@ TextStyle blueTextFont = GoogleFonts.raleway()
     .copyWith(color: accentColor2, fontWeight: FontWeight.w500);
 TextStyle redTextFont = GoogleFonts.raleway()
     .copyWith(color: mainColor, fontWeight: FontWeight.w500);
+TextStyle yellowTextFont = GoogleFonts.raleway()
+    .copyWith(color: accentColor3, fontWeight: FontWeight.w500);
 
 TextStyle blackNumberFont = GoogleFonts.openSans()
     .copyWith(color: Colors.black, fontWeight: FontWeight.w500);
 TextStyle whiteNumberFont = GoogleFonts.openSans()
     .copyWith(color: Colors.white, fontWeight: FontWeight.w500);
+TextStyle yellowNumberFont = GoogleFonts.openSans()
+    .copyWith(color: accentColor3, fontWeight: FontWeight.w500);

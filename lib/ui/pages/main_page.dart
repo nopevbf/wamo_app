@@ -38,9 +38,18 @@ class _MainPageState extends State<MainPage> {
               bottomNavBarIndex = index;
             });
           },
-          children: const <Widget>[
-            MoviePage(),
-            Center(child: Text('New Movie')),
+          children: <Widget>[
+            const MoviePage(),
+            const Center(child: Text('New Movie')),
+            Align(
+              alignment: Alignment.topCenter,
+              child: GestureDetector(
+                onTap: () {
+                  context.read<UserBloc>().add(const SignOut());
+                  AuthServices.signOut();
+                },
+              ),
+            )
           ],
         ),
         customButtomNavBar(),

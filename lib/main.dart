@@ -7,6 +7,7 @@ import 'package:wamo_app/services/services.dart';
 import 'package:wamo_app/shared/shared.dart';
 import 'package:wamo_app/ui/pages/pages.dart';
 
+import 'bloc/movie_bloc.dart';
 import 'bloc/page_bloc.dart';
 import 'bloc/theme_bloc.dart';
 
@@ -28,15 +29,20 @@ class MyApp extends StatelessWidget {
             providers: [
               BlocProvider(create: (_) => PageBloc()),
               BlocProvider(create: (_) => UserBloc()),
-              BlocProvider(create: (_) => ThemeBloc())
+              BlocProvider(create: (_) => ThemeBloc()),
+              BlocProvider(create: (_) => MovieBloc()..add(FetchMovie()))
             ],
             child: BlocBuilder<ThemeBloc, ThemeState>(
                 builder: (_, themeState) => MaterialApp(
                     // theme: themeState.themeData,
                     theme: ThemeData().copyWith(
-                      scaffoldBackgroundColor: Colors.white, colorScheme: ThemeData().colorScheme.copyWith(
+                      scaffoldBackgroundColor: Colors.white,
+                      colorScheme: ThemeData()
+                          .colorScheme
+                          .copyWith(
                             primary: accentColor1,
-                          ).copyWith(error: mainColor),
+                          )
+                          .copyWith(error: mainColor),
                     ),
                     debugShowCheckedModeBanner: false,
                     home: const Wrapper()))));
