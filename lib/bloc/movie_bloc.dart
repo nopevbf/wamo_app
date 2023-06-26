@@ -11,7 +11,7 @@ class MovieBloc extends Bloc<MovieEvent, MovieState> {
   MovieBloc() : super(MovieInitial()) {
     on<MovieEvent>((event, emit) async {
       if (event is FetchMovie) {
-        List<Movies> movies = await MoviesServices.getMovies(1);
+        List<Movies> movies = await MovieServices.getMovies(1);
         emit(MovieLoaded(movies));
       }
     });

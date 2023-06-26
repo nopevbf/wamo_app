@@ -1,6 +1,7 @@
 part of 'shared.dart';
 
 const double defaultMargin = 24;
+const double defaultTopArrow = 56;
 
 Color mainColor = const Color(0xFFAB0000);
 Color accentColor1 = const Color(0xFF737373);

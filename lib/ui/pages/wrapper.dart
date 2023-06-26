@@ -24,12 +24,14 @@ class Wrapper extends StatelessWidget {
           : (pageState is OnLoginPage)
               ? const SignInPage()
               : (pageState is OnRegistPage)
-                  ? SignUpPage(pageState.registData):
-                  (pageState is OnPreferencePage)
-                      ? PreferencePage(pageState.registData):
-                      (pageState is OnAccountConfirmationPage)
+                  ? SignUpPage(pageState.registData)
+                  : (pageState is OnPreferencePage)
+                      ? PreferencePage(pageState.registData)
+                      : (pageState is OnAccountConfirmationPage)
                           ? AccountConfirmationPage(pageState.registData)
-                  : const MainPage(),
+                          : (pageState is OnMovieDetailPage)
+                              ? MovieDetailPage(pageState.movies)
+                              : const MainPage(),
     );
   }
 }

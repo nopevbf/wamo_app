@@ -45,3 +45,12 @@ class GoToAccountConfirmationPage extends PageEvent {
   @override
   List<Object> get props => [registData];
 }
+
+class GoToMovieDetailPage extends PageEvent {
+  final Movies movies;
+
+  const GoToMovieDetailPage(this.movies);
+
+  @override
+  List<Object> get props => [movies];
+}

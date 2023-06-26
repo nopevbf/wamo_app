@@ -20,6 +20,8 @@ class PageBloc extends Bloc<PageEvent, PageState> {
         emit(OnPreferencePage(event.registData));
       } else if (event is GoToAccountConfirmationPage) {
         emit(OnAccountConfirmationPage(event.registData));
+      } else if (event is GoToMovieDetailPage) {
+        emit(OnMovieDetailPage(event.movies));
       }
     });
   }

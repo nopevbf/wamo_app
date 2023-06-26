@@ -125,9 +125,9 @@ class MoviePage extends StatelessWidget {
                         right:
                             (index == movies.length - 1) ? defaultMargin : 16),
                     child: MovieCard(movies[index], () {
-                      // context
-                      //     .read<PageBloc>()
-                      //     .add(GoToMovieDetailPage(movies[index]));
+                      context
+                          .read<PageBloc>()
+                          .add(GoToMovieDetailPage(movies[index]));
                     }),
                   ),
                 );
@@ -235,7 +235,6 @@ class MoviePage extends StatelessWidget {
                   ))
               .toList(),
         ),
-
         const SizedBox(
           height: 100,
         ),
